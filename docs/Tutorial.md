@@ -7,43 +7,43 @@ permalink: docs/tutorial.html
 next: videos
 ---
 
-## Preface
+## Preface 前言
 
-This tutorial aims to get you up to speed with writing iOS and Android apps using React Native. If you're wondering what React Native is and why Facebook built it, this [blog post](https://code.facebook.com/posts/1014532261909640/react-native-bringing-modern-web-techniques-to-mobile/) explains that.
+This tutorial aims to get you up to speed with writing iOS and Android apps using React Native. If you're wondering what React Native is and why Facebook built it, this [blog post](https://code.facebook.com/posts/1014532261909640/react-native-bringing-modern-web-techniques-to-mobile/) explains that. 本教程意在让你能够全速使用RN来撰写iOS和安卓的应用。如果你正在思考什么是RN以及脸书为啥要建立它，这篇 [blog post博文](https://code.facebook.com/posts/1014532261909640/react-native-bringing-modern-web-techniques-to-mobile/) 会解释。
 
-We assume you have experience writing applications with React. If not, you can learn about it on the [React website](http://facebook.github.io/react/).
+We assume you have experience writing applications with React. If not, you can learn about it on the [React website](http://facebook.github.io/react/).我们假设你具有使用React撰写应用程序的经验。如果不是，你可以在[React 网站](http://facebook.github.io/react/)上学习它。
 
 
-## Setup
+## Setup 设置
 
-React Native requires the basic setup explained at [React Native Getting Started](docs/getting-started.html#content).
+React Native requires the basic setup explained at [React Native Getting Started](docs/getting-started.html#content).RN需要基本的设置，这在 [React Native Getting Started](docs/getting-started.html#content) 中已经解释过。
 
-After installing these dependencies there are two simple commands to get a React Native project all set up for development.
+After installing these dependencies there are two simple commands to get a React Native project all set up for development.在安装完成相应的依赖后，还有两个简单的命令才能让一个RN项目开发设置完成。
 
 1. `npm install -g react-native-cli`
 
-    react-native-cli is a command line interface that does the rest of the set up. It’s installable via npm. This will install `react-native` as a command in your terminal. You only ever need to do this once.
+    react-native-cli is a command line interface that does the rest of the set up. It’s installable via npm. This will install `react-native` as a command in your terminal. You only ever need to do this once. react-native-cli 是一个命令行交互用来进行剩余设置。它是通过npm进行安装的。这会安装 `react-native` 在你的终端作为一个命令。你只需要这么做一次即可。
 
 2. `react-native init AwesomeProject`
 
-    This command fetches the React Native source code and dependencies and then creates a new Xcode project in `AwesomeProject/iOS/AwesomeProject.xcodeproj` and a gradle project in `AwesomeProject/android/app`.
+    This command fetches the React Native source code and dependencies and then creates a new Xcode project in `AwesomeProject/iOS/AwesomeProject.xcodeproj` and a gradle project in `AwesomeProject/android/app`. 这个名利会获取RN的源代码和依赖，并且创建一个新的Xcode项目 `AwesomeProject/iOS/AwesomeProject.xcodeproj` 和一个gradle项目  `AwesomeProject/android/app`
 
 
-## Overview
+## Overview 概述
 
-In this tutorial we'll be building a simple version of the Movies app that fetches 25 movies that are in theaters and displays them in a ListView.
+In this tutorial we'll be building a simple version of the Movies app that fetches 25 movies that are in theaters and displays them in a ListView.在本教程中我们将建立一个简单版本的电影应用，用来获取25部电影并且将它们像是在一个ListView里。
 
-### Starting the app on iOS
+### Starting the app on iOS在iOS上开始该应用
 
-Open this new project (`AwesomeProject/ios/AwesomeProject.xcodeproj`) in Xcode and simply build and run it with `⌘+R`. Doing so will also start a Node server which enables live code reloading. With this you can see your changes by pressing `⌘+R` in the simulator rather than recompiling in Xcode.
+Open this new project (`AwesomeProject/ios/AwesomeProject.xcodeproj`) in Xcode and simply build and run it with `⌘+R`. Doing so will also start a Node server which enables live code reloading. With this you can see your changes by pressing `⌘+R` in the simulator rather than recompiling in Xcode.在Xcode中打开这个新的项目 (`AwesomeProject/ios/AwesomeProject.xcodeproj`)并且使用 `⌘+R`构建和运行它。这同时会启动一个Node服务器可以激活live code自动装载（的功能）。通过在模拟器中按 `⌘+R` 来查看你的变更总比在Xcode中重新编译要好。
 
-### Starting the app on Android
+### Starting the app on Android 在安卓上启动该应用
 
-In your terminal navigate into the `AwesomeProject` and run:
+In your terminal navigate into the `AwesomeProject` and run:在你的终端导航到 `AwesomeProject` 并且运行：
 
     react-native run-android
 
-This will install the generated app on your emulator or device, as well as start the Node server which enables live code reloading. To see your changes you have to open the rage-shake-menu (either shake the device or press the menu button on devices, press F2 or Page Up for emulator, ⌘+M for Genymotion), and then press `Reload JS`.
+This will install the generated app on your emulator or device, as well as start the Node server which enables live code reloading. To see your changes you have to open the rage-shake-menu (either shake the device or press the menu button on devices, press F2 or Page Up for emulator, ⌘+M for Genymotion), and then press `Reload JS`.这会将产生好的应用安装到你的模拟器或设备上，也会启动一个Node服务器激活live code的自动装载。要查看你的更新，你可以打开rage-shake-menu(要么活动你的设备或者在设备上按下菜单按钮，在模拟器上按F2或Page Up，在Genymotion中按 ⌘+M )，接着按 `Reload JS`。
 
 ### Hello World
 
